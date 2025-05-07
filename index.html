@@ -1,14 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colores en CSSt</title>
-   <link href="practica/estilos.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <title>Para mi amada Fátima</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffb6c1;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 100px;
+      font-size: 3em;
+      text-shadow: 2px 2px #c0392b;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 20px;
+    }
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: absolute;
+      top: -10%;
+      animation: float 10s infinite linear;
+      opacity: 0.8;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50px 50px 0 0;
+      position: absolute;
+    }
+    .heart::before {
+      left: 50px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+    .heart::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+      }
+    }
+    .message {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(255, 105, 180, 0.8);
+      border-radius: 20px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-    <h1>colores en css</h1>
-     <h1>colores en css</h1>
-<h2 class="rojo">variante en rojo</h2> 
+  <h1>Para mi preciosa Fátima</h1>
+  <div class="message">
+    <p>Desde el momento en que entraste en mi vida, todo cambió para mejor.</p>
+    <p>Tu sonrisa ilumina mis días, tu amor llena mi corazón.</p>
+    <p>Gracias por ser el regalo más hermoso que Dios me dio.</p>
+    <p><strong>Te amo con todo mi corazón.</strong></p>
+    <p>— Jesús</p>
+  </div>
+
+  <!-- Corazones animados -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 5 + Math.random() * 10 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Música opcional -->
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
 </body>
 </html>
